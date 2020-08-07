@@ -8,6 +8,8 @@ import sys
 import subprocess
 from pathlib import Path
 
+# Opening file in any OS
+
 
 def open_file(filename):
     if sys.platform == "win32":
@@ -66,8 +68,7 @@ if __name__ == "__main__":
     wishMe()
     if True:
         query = takeCommand().lower()
-
-        # Execute the queries
+        # Executing the queries
         if 'wikipedia' in query:
             print('Searching Wikipedia...')
             query = query.replace('wikipedia', '')
@@ -79,16 +80,6 @@ if __name__ == "__main__":
             webbrowser.get('firefox').open('https://www.youtube.com')
         elif 'open google' in query:
             webbrowser.get('firefox').open('https://www.google.com')
-        elif 'open stackoverflow' in query:
-            webbrowser.get('firefox').open('https://www.stackoverflow.com')
-
-        elif 'play music' in query:
-            webbrowser.get('firefox').open(
-                'https://www.youtube.com/watch?v=A6topxBzFcs')
-
         elif 'the time' in query:
             strTime = datetime.datetime.now().strftime('%H:%M:%S')
             speak(f'Sir, the time is, {strTime}')
-        elif 'open code' in query:
-            codePath = os.chdir('Applications/Visual\ Studio\ Code.app')
-            open_file(codePath)
